@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { SidebarComponent } from "@syncfusion/ej2-react-navigations"
-import NavItems from './NavItems'
+import NavItemsAdmin from './NavItemsAdmin'
 
-const MobileSidebar = () => {
+const MobileSidebarAdmin = () => {
   const sidebarRef = useRef(null)
 
   const toggleSidebar = () => {
@@ -37,10 +37,10 @@ const MobileSidebar = () => {
         showBackdrop={true}
         type='over'
       >
-        <NavItems handleClick={toggleSidebar} />
+        <NavItemsAdmin handleClick={toggleSidebar} />
       </SidebarComponent>
     </div>
   )
 }
 
-export default MobileSidebar
+export default MobileSidebarAdmin

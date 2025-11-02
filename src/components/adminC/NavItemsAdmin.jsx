@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { sidebarItemsAdmin } from "./index"
-import { cn } from '../../lib/utils'
+import { sidebarItemsAdmin } from "../index"
+import { cn } from '../../../lib/utils'
 
-const NavItems = ({ handleClick }) => {
+const NavItemsAdmin = ({ handleClick }) => {
   const admin = {
     name: 'Ranjit',
     email: 'ranjitppatil10@gmail.com',
@@ -49,7 +49,7 @@ const NavItems = ({ handleClick }) => {
         </nav>
 
         <footer className='nav-footer'>
-          <img src={admin.imageUrl || '/images/david.webp'} alt={admin.name || 'David'} />
+          <img src={admin.imageUrl || '/images/david.webp'} alt={admin.name || 'Ranjit'} />
           <article>
             <h2>{admin.name}</h2>
             <p>{admin.email}</p>
@@ -73,4 +73,4 @@ const NavItems = ({ handleClick }) => {
   )
 }
 
-export default NavItems
+export default NavItemsAdmin

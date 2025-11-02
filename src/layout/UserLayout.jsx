@@ -1,16 +1,16 @@
 import React from 'react'
-import { Outlet } from "react-router-dom";
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
-import { NavItems } from "../components/index"
-import { MobileSidebar } from "../components/"
+import NavItemsUser from '../components/userC/NavItemsUser';
+import { MobileSidebarUser } from '../components/index';
+import { Outlet } from 'react-router-dom';
 
 const UserLayout = () => {
   return (
     <div className="admin-layout">
-      <MobileSidebar />
+      <MobileSidebarUser />
       <aside className="w-full max-w-[270px] hidden lg:block">
         <SidebarComponent width={270} enableGestures={false}>
-          <NavItems />
+          <NavItemsUser />
         </SidebarComponent>
       </aside>
       <aside className="children">

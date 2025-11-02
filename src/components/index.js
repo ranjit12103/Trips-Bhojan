@@ -1,5 +1,6 @@
-export { default as NavItems } from './NavItems.jsx'
-export { default as MobileSidebar } from './MobileSidebar.jsx'
+export { default as NavItemsAdmin } from './adminC/NavItemsAdmin.jsx'
+export { default as MobileSidebarUser } from './userC/MobileSidebarUser.jsx'
+export { default as MobileSidebarAdmin } from './adminC/MobileSidebarAdmin.jsx'
 export { default as Header } from './Header.jsx'
 export { default as StatCard } from './StatsCard.jsx'
 
@@ -23,19 +24,19 @@ export const sidebarItemsUser = [
     id: 1,
     icon: "/icons/home.svg",
     label: "Dashboard",
-    href: "/dashboard",
+    href: "/user/overview",
   },
   {
     id: 2,
     icon: "/icons/itinerary.svg",
     label: "AI Trips",
-    href: "/trips",
+    href: "/user/trips-generator",
   },
   {
     id: 3,
     icon: "/icons/itinerary.svg",
     label: "Bhojan/Menu",
-    href: "/menu",
+    href: "/user/bhojan-generator",
   },
 ]
 

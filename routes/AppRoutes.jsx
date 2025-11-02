@@ -8,6 +8,7 @@ import AllUsers from "../src/pages/admin/AllUsers";
 import UserDashboard from "../src/pages/user/UserDashboard";
 import TripsGen from "../src/pages/user/TripsGen";
 import BhojanGen from "../src/pages/user/BhojanGen";
+import UserLayout from "../src/layout/UserLayout";
 
 const AppRoutes = () => {
   return (
@@ -18,8 +19,8 @@ const AppRoutes = () => {
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="all-users" element={<AllUsers />} />
         </Route>
-        <Route path="/user" element={<AdminLayout />}>
-          <Route path="dashboard" element={<UserDashboard />} />
+        <Route path="/user" element={<UserLayout />}>
+          <Route path="overview" element={<UserDashboard />} />
           <Route path="trips-generator" element={<TripsGen />} />
           <Route path="bhojan-generator" element={<BhojanGen />} />
         </Route>
