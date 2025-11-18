@@ -1,0 +1,264 @@
+/* landing.css - plain CSS (Tailwind removed) */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* ================================
+   THEME VARIABLES
+================================ */
+:root{
+  --font-inter: "Inter", sans-serif;
+
+  /* Colors */
+  --color-green-50: #22c55e;
+  --color-green-90: #14532d;
+  --color-gray-20: #f3f4f6;
+  --color-gray-50: #fafafa;
+  --color-gray-90: #1f2937;
+
+  /* Background Images */
+  --background-image-pattern: url("/images/pattern.png");
+  --background-image-pattern-2: url("/images/pattern-2.png");
+
+  /* Shadows & radius */
+  --shadow-soft: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --radius-20: 20px;
+}
+
+/* ================================
+   RESET + BASE
+================================ */
+*{ box-sizing: border-box; margin:0; padding:0; }
+html,body{ height:100%; }
+body{
+  font-family: var(--font-inter);
+  background-color: #fff;
+  color: var(--color-gray-90);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ================================
+   LAYOUT HELPERS (replacement for some utility classes)
+   These are plain CSS equivalents of small Tailwind helpers
+================================ */
+.max-container {
+  width:100%;
+  max-width:1440px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.padding-container {
+  padding-left: 1.5rem;  /* 24px */
+  padding-right: 1.5rem;
+}
+@media (min-width:1024px){ /* lg */
+  .padding-container { padding-left: 5rem; padding-right: 5rem; } /* 80px */
+}
+
+.flex-center { display:flex; align-items:center; justify-content:center; }
+.flex-between { display:flex; align-items:center; justify-content:space-between; }
+.flex-start { display:flex; align-items:center; justify-content:flex-start; }
+.flex-end { display:flex; align-items:center; justify-content:flex-end; }
+
+/* ================================
+   BUTTONS
+================================ */
+.btn-white {
+  background: #ffffff;
+  color: var(--color-green-50);
+  padding: 0.75rem 2rem; /* 12px 32px */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  display:inline-block;
+  cursor:pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-white-text {
+  background: #ffffff;
+  color: var(--color-gray-90);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor:pointer;
+}
+
+.btn-green {
+  background: var(--color-green-50);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor:pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-dark-green {
+  background: var(--color-green-90);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  cursor:pointer;
+  transition: background .15s ease;
+}
+.btn-dark-green:hover{ background: #0f2b20; }
+
+.btn-dark-green-outline {
+  background: var(--color-green-90);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-20);
+  cursor:pointer;
+}
+
+/* ================================
+   TYPOGRAPHY CLASSES (replacements for .regular-*, .bold-*)
+================================ */
+.regular-64 { font-size: 64px; font-weight:400; line-height:1.2; }
+.regular-40 { font-size: 40px; font-weight:400; line-height:1.2; }
+.regular-32 { font-size: 32px; font-weight:400; }
+.regular-24 { font-size: 24px; font-weight:400; }
+.regular-20 { font-size: 20px; font-weight:400; }
+.regular-18 { font-size: 18px; font-weight:400; }
+.regular-16 { font-size: 16px; font-weight:400; }
+.regular-14 { font-size: 14px; font-weight:400; }
+.medium-14  { font-size: 14px; font-weight:600; }
+
+.bold-88 { font-size: 88px; font-weight:700; line-height:1.2; }
+.bold-64 { font-size: 64px; font-weight:700; line-height:1.2; }
+.bold-52 { font-size: 52px; font-weight:700; line-height:1.2; }
+.bold-40 { font-size: 40px; font-weight:700; }
+.bold-32 { font-size: 32px; font-weight:700; }
+.bold-20 { font-size: 20px; font-weight:700; }
+.bold-18 { font-size: 18px; font-weight:700; }
+.bold-16 { font-size: 16px; font-weight:700; }
+
+/* ================================
+   HERO / FEATURE / GET-APP sections
+   Note: replaced unknown Tailwind bg-... utilities with CSS using variables
+================================ */
+.hero-map {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--background-image-pattern-2);
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width:768px){ /* md */
+  .hero-map { right: -7rem; } /* md:-right-28 approximate */
+}
+@media (min-width:1280px){ /* xl */
+  .hero-map { top: -15rem; } /* xl:-top-60 approximate */
+}
+
+.camp-quote {
+  position:absolute;
+  right: -1.5rem;
+  bottom: 1rem;
+  width: 140px;
+}
+@media (min-width:1024px){
+  .camp-quote { bottom: 2.5rem; right: -2rem; width: 186px; }
+}
+
+.feature-phone {
+  position:absolute;
+  top: 13%;
+  z-index:10;
+  display:none;
+  transform: rotate(15deg);
+  max-width:1500px;
+}
+@media (min-width:1024px){
+  .feature-phone { display:block; left: -4rem; }
+}
+
+.get-app {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  justify-content:space-between;
+  gap:2rem;
+  padding: 3rem 1.5rem;
+  background-color: var(--color-green-90);
+  color: #fff;
+  background-image: var(--background-image-pattern);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+  border-radius: 0; /* change if you prefer rounded corner */
+}
+@media (min-width:640px){ /* sm */
+  .get-app { flex-direction:row; gap:3rem; padding:4rem 2rem; }
+}
+@media (min-width:1280px){ /* xl */
+  .get-app { padding:6rem 5rem; border-radius: 40px; }
+}
+
+/* ================================
+   HELPERS: hide scrollbar
+================================ */
+.hide-scrollbar::-webkit-scrollbar { display:none; }
+.hide-scrollbar { -ms-overflow-style:none; scrollbar-width:none; }
+
+/* ================================
+   Minimal component examples that used nesting earlier:
+   Keep these flat to avoid postcss-nesting issues
+================================ */
+.stats-card {
+  padding: 1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.25rem;
+  background:#fff;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-20);
+  color: var(--color-gray-90);
+}
+.stats-card .content {
+  display:flex;
+  gap:0.75rem;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* .sign-in-card */
+.sign-in-card {
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border:1px solid var(--color-gray-20);
+  max-width:510px;
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+.sign-in-card header { display:flex; gap:0.5rem; align-items:center; justify-content:center; }
+.sign-in-card article { margin-top:1.5rem; margin-bottom:1.875rem; display:flex; flex-direction:column; gap:0.75rem; }
+
+/* small utilities kept as plain css */
+.info-pill { display:flex; align-items:center; gap:0.5rem; }
+.info-pill img { width:20px; height:20px; }
+.info-pill figcaption { font-size: 0.875rem; color: var(--color-gray-90); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* example card */
+.trip-card {
+  background:#fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+.trip-card img { width:100%; height:160px; object-fit:cover; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+
+/* footer / header small styles to avoid nested selectors errors */
+.link-logo { display:flex; gap:0.375rem; padding:2.5rem 0; border-bottom:1px solid var(--color-gray-20); }
+.link-logo h1 { font-size:1rem; font-weight:700; color:var(--color-gray-90); }
+
+/* Add or adjust more rules here as needed for your layout */
