@@ -7,12 +7,12 @@ const Navbar = () => {
     <>
       <nav>
         <div className="container">
-          logo
+          logo change
         </div>
       </nav>
 
       <MobileSideBar>
-        
+
       </MobileSideBar>
     </>
   )
