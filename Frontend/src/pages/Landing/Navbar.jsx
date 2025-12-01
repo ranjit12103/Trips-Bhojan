@@ -1,6 +1,5 @@
 import React from 'react'
 import './landing.css'
-import { NAV_LINKS } from './landing'
 
 const Navbar = () => {
   return (
